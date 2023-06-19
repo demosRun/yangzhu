@@ -1,5 +1,5 @@
 <template lang="pug">
-.page-2
+.page-2.scale-box2
   img.so.so-0(src="@|177.jpg|")
   img.so.so-1(src="@|172.png|")
   img.so.so-2(src="@|107.png|" o-animation="shrink" o-tap="choujiang")

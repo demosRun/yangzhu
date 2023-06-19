@@ -74,12 +74,12 @@
 	],
 	"scriptList": [
 		{
-			"name": "jquery1.11.0",
-			"src": "http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js"
-		},
-		{
 			"name": "autoScale",
 			"src": "https://cunchu.site/owo/plug/autoScale.js"
+		},
+		{
+			"name": "toast",
+			"src": "https://demos.run/debuger/static/js/toast.js"
 		},
 		{
 			"name": "main",
@@ -95,6 +95,11 @@
 		}
 	],
 	"pageList": [
+		{
+			"name": "login",
+			"src": "http://lamp.run:8082/f893979c70f57ea7.owo",
+			"type": "page"
+		},
 		{
 			"name": "page1",
 			"src": "./src/page/page1.owo",

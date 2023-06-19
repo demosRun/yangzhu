@@ -14,6 +14,6 @@ setTimeout(() => {
     center: 'middle',
     scroll: false,
     type: 'scale',
-    box: '.scale-box'
+    box: '.scale-box2'
   })
 }, 100);

@@ -1,5 +1,5 @@
 <template lang="pug">
-.page-1
+.page-1.scale-box2
   .so.so-0
   .so.so-1
     .so.so-2
@@ -19,7 +19,7 @@
     .so.so-10.owo-a-scale(go="page2")
     .so.so-11.owo-a-scale
     .so.so-12.owo-a-scale
-    .so.so-13.owo-a-scale
+    .so.so-13.owo-a-scale(onclick="alert('您当前为1级会员，仅可添加一只动物!')")
   .so.so-14.owo-a-scale
   .so.so-15.owo-a-scale
   .dw-box
@@ -29,8 +29,28 @@
 
 <script>
   module.exports = {
-    created: function () {
+    data: {
+      userInfo: {}
+    },
+    show: function () {
+      if (!owo.state.userInfo) {
+        setTimeout(() => {
+          owo.go('login')
+        }, 0);
+        return
+      }
+      // 获取用户数据
+      var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      };
 
+      fetch("https://service-8wm1j70q-1256763111.gz.apigw.tencentcs.com/release/dbGet?name=yangzhu_" + owo.state.userInfo.username, requestOptions)
+        .then(response => response.json())
+        .then(result => {
+          this.data.userInfo = result.data
+        })
+        .catch(error => console.log('error', error));
     }
   }
 </script>
@@ -127,9 +147,9 @@
   background-image: url('@|3268.png|');;
 }
 .so-11 {
-  left: 590px;
+  left: 582px;
   top: 141px;
-  width: 99.9999999999999px;
+  width: 114px;
   height: 111px;
   z-index: -7;
   background-image: url('@|3263.png|');;
@@ -143,9 +163,9 @@
   background-image: url('@|3258.png|');;
 }
 .so-13 {
-  left: 0px;
+  left: -9px;
   top: 823px;
-  width: 100px;
+  width: 114px;
   height: 111px;
   z-index: -9;
   background-image: url('@|3253.png|');;
@@ -196,16 +216,17 @@
 .dw-box {
   width: 100%;
   height: 100%;
-  z-index: 3;
+  z-index: 0;
   position: absolute;
 }
 .yang {
   background-image: url('@|yang.png|');
   position: absolute;
   bottom: 23%;
-  width: 138px;
-  height: 87px;
+  width: 186px;
+  height: 165px;
   left: 31%;
+  background-size: 100%;
 }
 .sh-time {
   color: white;
@@ -217,7 +238,7 @@
   text-align: center;
   padding: 5px;
   border-radius: 5px;
-  left: -63px;
+  left: -32px;
   box-shadow: 2px 2px 6px #121212;
 }
 </style>
