@@ -279,6 +279,18 @@ li {
   width: 60%;
   display: block;
 }
+
+[o-animation="floatLeftRight"] {
+  animation: floatLeftRight 3s linear infinite;
+  animation-direction: alternate;
+}
+
+@keyframes float {
+  0% { transform: translateX(-5vw);}
+  50% {transform: translateX(5vw);}
+  100% {transform: translateX(-5vw);}
+}
+
 .page-1 .so {
   position: absolute;
 }
@@ -464,13 +476,14 @@ li {
 }
 
 .page-1 .yang {
-  background-image: url('../images/yang.png');
+  background-image: url('../images/tz.gif');
   position: absolute;
   bottom: 23%;
-  width: 186px;
-  height: 165px;
+  width: 205px;
+  height: 205px;
   left: 31%;
   background-size: 100%;
+  display: none;
 }
 
 .page-1 .sh-time {

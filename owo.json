@@ -82,6 +82,10 @@
 			"src": "https://demos.run/debuger/static/js/toast.js"
 		},
 		{
+			"name": "moment",
+			"src": "https://cunchu.site/owo/script/moment.js"
+		},
+		{
 			"name": "main",
 			"src": "./src/main.js",
 			"resource": true

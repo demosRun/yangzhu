@@ -7,7 +7,7 @@
     .so.so-3
       .numb 11424
     .so.so-4
-      .so.so-5.owo-a-scale
+      .so.so-5.owo-a-scale(onclick="alert('暂未开放!')")
       .so.so-6
         .numb(style="right: 68px;") 15424
     .so.so-7
@@ -21,9 +21,9 @@
     .so.so-12.owo-a-scale
     .so.so-13.owo-a-scale(onclick="alert('您当前为1级会员，仅可添加一只动物!')")
   .so.so-14.owo-a-scale
-  .so.so-15.owo-a-scale
+  .so.so-15.owo-a-scale(o-tap="shouhuo()")
   .dw-box
-    .yang
+    .yang(o-animation="floatLeftRight")
       .sh-time 1小时36分钟后可收获
 </template>
 
@@ -33,23 +33,55 @@
       userInfo: {}
     },
     show: function () {
-      if (!owo.state.userInfo) {
-        setTimeout(() => {
-          owo.go('login')
-        }, 0);
-        return
-      }
+      // if (!owo.state.userInfo) {
+      //   setTimeout(() => {
+      //     owo.go('login')
+      //   }, 0);
+      //   return
+      // }
       // 获取用户数据
       var requestOptions = {
         method: 'GET',
         redirect: 'follow'
       };
 
-      fetch("https://service-8wm1j70q-1256763111.gz.apigw.tencentcs.com/release/dbGet?name=yangzhu_" + owo.state.userInfo.username, requestOptions)
+      fetch("https://service-8wm1j70q-1256763111.gz.apigw.tencentcs.com/release/dbGet?name=yangzhu_puge", requestOptions)
         .then(response => response.json())
         .then(result => {
+          console.log(result.data)
           this.data.userInfo = result.data
+          if (result.data.anm.anm1) {
+            this.query('.yang').style.display = 'block'
+            if (result.data.anm.anm1 + 86400 < parseInt(Date.parse(new Date()) / 1000)) {
+              this.query('.yang .sh-time').innerText = '可收获'
+            } else {
+              this.query('.yang .sh-time').innerText = moment(result.data.anm.anm1 * 1000).add(24, 'hour').fromNow() + '可收获'
+            }
+            
+          }
         })
+        .catch(error => console.log('error', error));
+    },
+    shouhuo: function () {
+      alert('当前没有可收获动物!')
+      return
+      var myHeaders = new Headers();
+      myHeaders.append("Content-Type", "application/json");
+
+      var raw = JSON.stringify({
+        "anm1": parseInt(Date.parse(new Date()) / 1000)
+      });
+
+      var requestOptions = {
+        method: 'POST',
+        headers: myHeaders,
+        body: raw,
+        redirect: 'follow'
+      };
+
+      fetch("https://service-8wm1j70q-1256763111.gz.apigw.tencentcs.com/release/dbAdd?name=yangzhu_puge&key=anm", requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
         .catch(error => console.log('error', error));
     }
   }
@@ -220,13 +252,14 @@
   position: absolute;
 }
 .yang {
-  background-image: url('@|yang.png|');
+  background-image: url('@|tz.gif|');
   position: absolute;
   bottom: 23%;
-  width: 186px;
-  height: 165px;
+  width: 205px;
+  height: 205px;
   left: 31%;
   background-size: 100%;
+  display: none;
 }
 .sh-time {
   color: white;
