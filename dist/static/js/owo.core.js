@@ -1,4 +1,4 @@
-// Sun Jun 25 2023 00:18:07 GMT+1000 (澳大利亚东部标准时间)
+// Tue Jun 27 2023 01:56:49 GMT+1000 (澳大利亚东部标准时间)
 var owo = {tool: {},state: {},event: {}};
 /* 方法合集 */
 var _owo = {
@@ -918,6 +918,11 @@ _owo.showPage = function() {
   // 取出URL地址判断当前所在页面
   var pageArg = _owo.getarg(window.location.hash)
   
+  if (pageArg !== null) {
+    window.location.href = ''
+    return
+  }
+  
   
 
   // 从配置项中取出程序入口
@@ -1025,21 +1030,4 @@ function switchPage (oldUrlParam, newUrlParam) {
 if (window.onhashchange) {window.onhashchange = _owo.hashchange;} else {window.onpopstate = _owo.hashchange;}
 // 执行页面加载完毕方法
 _owo.ready(_owo.showPage)
-
-
-// 这是用于代码调试的自动刷新代码，他不应该出现在正式上线版本!
-if ("WebSocket" in window) {
-  // 打开一个 web socket
-  if (!window._owo.ws) window._owo.ws = new WebSocket("ws://" + window.location.host)
-  window._owo.ws.onmessage = function (evt) { 
-    if (evt.data == 'reload') {
-      location.reload()
-    }
-  }
-  window._owo.ws.onclose = function() { 
-    console.info('与服务器断开连接')
-  }
-} else {
-  console.error('浏览器不支持WebSocket')
-}
 

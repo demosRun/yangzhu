@@ -54,6 +54,7 @@
             this.query('.yang').style.display = 'block'
             if (result.data.anm.anm1 + 86400 < parseInt(Date.parse(new Date()) / 1000)) {
               this.query('.yang .sh-time').innerText = '可收获'
+              window.ksh = true
             } else {
               this.query('.yang .sh-time').innerText = moment(result.data.anm.anm1 * 1000).add(24, 'hour').fromNow() + '可收获'
             }
@@ -63,8 +64,11 @@
         .catch(error => console.log('error', error));
     },
     shouhuo: function () {
-      alert('当前没有可收获动物!')
-      return
+      if (!window.ksh) {
+        alert('当前没有可收获动物!')
+        return
+      }
+      
       var myHeaders = new Headers();
       myHeaders.append("Content-Type", "application/json");
 
@@ -81,7 +85,10 @@
 
       fetch("https://service-8wm1j70q-1256763111.gz.apigw.tencentcs.com/release/dbAdd?name=yangzhu_puge&key=anm", requestOptions)
         .then(response => response.text())
-        .then(result => console.log(result))
+        .then(result => {
+          alert('收获成功!')
+          this.show()
+        })
         .catch(error => console.log('error', error));
     }
   }

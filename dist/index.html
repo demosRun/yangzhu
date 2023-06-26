@@ -1,271 +1,368 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <!-- 页面的元信息 -->
-    <title>{TAG_14226_TAG}</title>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
-    <meta name="format-detection" content="telephone=no, email=no"/>
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="white"/>
-    <meta name="renderer" content="webkit"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="filetype" content="1"/>
-    <meta name="publishedtype" content="1"/>
-    <meta name="pagetype" content="2"/>
-    <meta name="screen-orientation" content="landscape"/>
-    <meta name="x5-orientation" content="landscape"/>
-    <meta name="full-screen" content="yes"/>
-    <meta name="x5-fullscreen" content="true"/>
-    <meta name="browsermode" content="application"/>
-    <meta name="x5-page-mode" content="app"/>
-    
-      <!-- 页面主样式文件 -->
-      <link charset="utf-8"  rel="stylesheet" href="./static/css/owo.core.css">
-      
-    <!-- 附属css文件 -->
-    <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
-      
-  </head>
-  <body>
-    <div class="scale-box">
+
+<head>
+  <!-- 页面的元信息 -->
+  <title>{TAG_14226_TAG}</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+  <meta name="renderer" content="webkit" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="filetype" content="1" />
+  <meta name="publishedtype" content="1" />
+  <meta name="pagetype" content="2" />
+  <meta name="screen-orientation" content="landscape" />
+  <meta name="x5-orientation" content="landscape" />
+  <meta name="full-screen" content="yes" />
+  <meta name="x5-fullscreen" content="true" />
+  <meta name="browsermode" content="application" />
+  <meta name="x5-page-mode" content="app" />
+
+  <!-- 页面主样式文件 -->
+  <link charset="utf-8" rel="stylesheet" href="./static/css/owo.core.css">
+
+  <!-- 附属css文件 -->
+  <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
+
+</head>
+
+<body>
+  <div class="scale-box">
     <!-- 页面[login]-->
-    <div class="login page" template="login" style="display: none;"><div class="router" view="loginContent"><div class="view-login" route="login"><div class="image-box"><img src="//cunchu.site/puge/login/image-box.png"></div><div class="hellow-text">嗨，欢迎回来!</div><div class="user-name-bar input-bar"><img class="bar-icon" src="//cunchu.site/puge/login/user.png"><input type="text" o-value="this.data.username" placeholder="用户名"></div><div class="pass-word-bar input-bar"><img class="bar-icon" src="//cunchu.site/puge/login/password.png"><input type="password" o-value="this.data.password" placeholder="密码"></div><div class="button-box"><div class="button" o-tap="login" o-hover="radial-out">登录</div><div class="button" o-hover="radial-out" style=" background-color: burlywood;" go="/view-loginContent=register">注册</div></div><div class="tool-bar"><div class="left"></div><div class="right" go-route="">忘记密码</div></div></div><div class="view-register" route="register"><img class="bg-1" src="//cunchu.site/puge/login/art.png"><p>欢迎注册PUGE账号</p><input class="register-input" type="text" o-value="this.data.registerusername" placeholder="用户名"><input class="register-input" type="password" o-value="this.data.registerPassWord" placeholder="密码"><input class="register-input" type="password" o-value="this.data.registerPassWordR" placeholder="确认密码"><div class="mini-box clear"><input class="register-input" type="text" o-value="this.data.registerPhone" placeholder="手机号码"><div class="button" o-tap="sendSMS">发送验证码</div></div><input class="register-input" type="text" o-value="this.data.registerCode" placeholder="验证码"><div class="button" o-tap="register">注册</div></div></div></div>
+    <div class="login page" template="login" style="display: none;">
+      <div class="router" view="loginContent">
+        <div class="view-login" route="login">
+          <div class="image-box">
+            <img src="//cunchu.site/puge/login/image-box.png">
+          </div>
+          <div class="hellow-text">嗨，欢迎回来!</div>
+          <div class="user-name-bar input-bar">
+            <img class="bar-icon" src="//cunchu.site/puge/login/user.png">
+            <input type="text" o-value="this.data.username" placeholder="用户名">
+          </div>
+          <div class="pass-word-bar input-bar">
+            <img class="bar-icon" src="//cunchu.site/puge/login/password.png">
+            <input type="password" o-value="this.data.password" placeholder="密码">
+          </div>
+          <div class="button-box">
+            <div class="button" o-tap="login" o-hover="radial-out">登录</div>
+            <div class="button" o-hover="radial-out" style=" background-color: burlywood;" go="/view-loginContent=register">注册</div>
+          </div>
+          <div class="tool-bar">
+            <div class="left"></div>
+            <div class="right" go-route="">忘记密码</div>
+          </div>
+        </div>
+        <div class="view-register" route="register">
+          <img class="bg-1" src="//cunchu.site/puge/login/art.png">
+          <p>欢迎注册PUGE账号</p>
+          <input class="register-input" type="text" o-value="this.data.registerusername" placeholder="用户名">
+          <input class="register-input" type="password" o-value="this.data.registerPassWord" placeholder="密码">
+          <input class="register-input" type="password" o-value="this.data.registerPassWordR" placeholder="确认密码">
+          <div class="mini-box clear">
+            <input class="register-input" type="text" o-value="this.data.registerPhone" placeholder="手机号码">
+            <div class="button" o-tap="sendSMS">发送验证码</div>
+          </div>
+          <input class="register-input" type="text" o-value="this.data.registerCode" placeholder="验证码">
+          <div class="button" o-tap="register">注册</div>
+        </div>
+      </div>
+    </div>
     <!-- 页面[page1]-->
-    <div class="page-1 scale-box2 page" template="page1" style="display: none;"><div class="so so-0"></div><div class="so so-1"><div class="so so-2"><div class="numb">15424</div></div><div class="so so-3"><div class="numb">11424</div></div><div class="so so-4"><div class="so so-5 owo-a-scale" onclick="alert('暂未开放!')"></div><div class="so so-6"><div class="numb" style="right: 68px;">15424</div></div></div><div class="so so-7"><img class="user-img" src="./static/images/userImg.png"><div class="user-name">玩家名字七个字</div><div class="live">LV.123</div></div></div><div class="so so-8"><div class="so so-9 owo-a-scale"></div><div class="so so-10 owo-a-scale" go="page2"></div><div class="so so-11 owo-a-scale"></div><div class="so so-12 owo-a-scale"></div><div class="so so-13 owo-a-scale" onclick="alert('您当前为1级会员，仅可添加一只动物!')"></div></div><div class="so so-14 owo-a-scale"></div><div class="so so-15 owo-a-scale" o-tap="shouhuo()"></div><div class="dw-box"><div class="yang" o-animation="floatLeftRight"><div class="sh-time">1小时36分钟后可收获</div></div></div></div>
+    <div class="page-1 scale-box2 page" template="page1" style="display: none;">
+      <div class="so so-0"></div>
+      <div class="so so-1">
+        <div class="so so-2">
+          <div class="numb">15424</div>
+        </div>
+        <div class="so so-3">
+          <div class="numb">11424</div>
+        </div>
+        <div class="so so-4">
+          <div class="so so-5 owo-a-scale" onclick="alert('暂未开放!')"></div>
+          <div class="so so-6">
+            <div class="numb" style="right: 68px;">15424</div>
+          </div>
+        </div>
+        <div class="so so-7">
+          <img class="user-img" src="./static/images/userImg.png">
+          <div class="user-name">玩家名字七个字</div>
+          <div class="live">LV.123</div>
+        </div>
+      </div>
+      <div class="so so-8">
+        <div class="so so-9 owo-a-scale"></div>
+        <div class="so so-10 owo-a-scale" go="page2"></div>
+        <div class="so so-11 owo-a-scale"></div>
+        <div class="so so-12 owo-a-scale"></div>
+        <div class="so so-13 owo-a-scale" onclick="alert('您当前为1级会员，仅可添加一只动物!')"></div>
+      </div>
+      <div class="so so-14 owo-a-scale"></div>
+      <div class="so so-15 owo-a-scale" o-tap="shouhuo()"></div>
+      <div class="dw-box">
+        <div class="yang" o-animation="floatLeftRight">
+          <div class="sh-time">1小时36分钟后可收获</div>
+        </div>
+      </div>
+    </div>
     <!-- 页面[page2]-->
-    <div class="page-2 scale-box2 page" template="page2" style="display: none;"><img class="so so-0" src="./static/images/177.jpg"><img class="so so-1" src="./static/images/172.png"><img class="so so-2" src="./static/images/107.png" o-animation="shrink" o-tap="choujiang"><img class="so so-3" src="./static/images/105.png" o-animation="shrink" o-tap="choujiang"><img class="so so-4" src="./static/images/106.png" o-animation="shrink" o-tap="choujiang"><div class="info">赢取话费充值卡</div><div class="info2">剩余6次抽奖机会</div><div class="choujiang-box" style="display:none;" o-tap="this.query('.choujiang-box').style.display = 'none'"><div class="choujiang"><div class="text">30元手机充值卡*1</div></div></div></div></div>
-    
-<!-- 框架script文件 -->
-<script src="./static/js/owo.core.js" type="text/javascript" charset="UTF-8"></script>
-<script type="text/javascript" charset="UTF-8">
-// 模块 login 的script代码
-var appType = 'test';
-var userInfo = localStorage.getItem("owoUserInfo_" + appType);
-function saveOpenID(openid) {
-  fetch("//going.run/userServer?route=updataWeixin", {
-    method: 'POST',
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      username: owo.state.userInfo.username,
-      session: owo.state.userInfo.session,
-      type: appType,
-      openid: openid
-    })
-  }).then(function (response) {
-    return response.json();
-  }).then(function (res) {
-    if (res.err === 0) {
-      owo.tool.toast('提交成功!');
-    } else {
-      owo.tool.toast("\u63D0\u4EA4\u5931\u8D25: " + res.message);
-    }
-  });
-}
-owo.script = {
-  "login": {
-    "data": {
-      "registerusername": "",
-      "registerPassWord": "",
-      "registerPassWordR": "",
-      "registerPhone": "",
-      "registerCode": "",
-      "username": "",
-      "password": "",
-      "toast": null,
-      "session": null,
-      "smsTime": 0
-    },
-    "created": function created() {
-      if (owo.tool.toast) toast = owo.tool.toast;else toast = alert;
-    },
-    "login": function login() {
-      fetch("//user.hanshu.run/login", {
+    <div class="page-2 scale-box2 page" template="page2" style="display: none;">
+      <img class="so so-0" src="./static/images/177.jpg">
+      <img class="so so-1" src="./static/images/172.png">
+      <img class="so so-2" src="./static/images/107.png" o-animation="shrink" o-tap="choujiang">
+      <img class="so so-3" src="./static/images/105.png" o-animation="shrink" o-tap="choujiang">
+      <img class="so so-4" src="./static/images/106.png" o-animation="shrink" o-tap="choujiang">
+      <div class="info">赢取话费充值卡</div>
+      <div class="info2">剩余6次抽奖机会</div>
+      <div class="choujiang-box" style="display:none;" o-tap="this.query('.choujiang-box').style.display = 'none'">
+        <div class="choujiang">
+          <div class="text">30元手机充值卡*1</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 框架script文件 -->
+  <script src="./static/js/owo.core.js" type="text/javascript" charset="UTF-8"></script>
+  <script type="text/javascript" charset="UTF-8">
+    // 模块 login 的script代码
+    var appType = 'test';
+    var userInfo = localStorage.getItem("owoUserInfo_" + appType);
+
+    function saveOpenID(openid) {
+      fetch("//going.run/userServer?route=updataWeixin", {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
+          username: owo.state.userInfo.username,
+          session: owo.state.userInfo.session,
           type: appType,
-          username: this.data.username,
-          password: this.data.password
+          openid: openid
         })
-      }).then(function (response) {
+      }).then(function(response) {
         return response.json();
-      }).then(function (res) {
-        console.log(res);
+      }).then(function(res) {
         if (res.err === 0) {
-          toast('登陆成功');
-          // do something
+          owo.tool.toast('提交成功!');
+        } else {
+          owo.tool.toast("\u63D0\u4EA4\u5931\u8D25: " + res.message);
+        }
+      });
+    }
+    owo.script = {
+      "login": {
+        "data": {
+          "registerusername": "",
+          "registerPassWord": "",
+          "registerPassWordR": "",
+          "registerPhone": "",
+          "registerCode": "",
+          "username": "",
+          "password": "",
+          "toast": null,
+          "session": null,
+          "smsTime": 0
+        },
+        "created": function created() {
+          if (owo.tool.toast) toast = owo.tool.toast;
+          else toast = alert;
+        },
+        "login": function login() {
+          fetch("//user.hanshu.run/login", {
+            method: 'POST',
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              type: appType,
+              username: this.data.username,
+              password: this.data.password
+            })
+          }).then(function(response) {
+            return response.json();
+          }).then(function(res) {
+            console.log(res);
+            if (res.err === 0) {
+              toast('登陆成功');
+              // do something
 
-          owo.state.userInfo = res.data;
-          localStorage.setItem('owoUserInfo_' + appType, JSON.stringify(res.data));
-          setTimeout(function () {
-            owo.go('page1');
-            if (window.openid && window.openid != res.data.weixin) {
-              if (window.confirm('是否用微信绑定当前账号?')) {
-                saveOpenID(window.openid);
+              owo.state.userInfo = res.data;
+              localStorage.setItem('owoUserInfo_' + appType, JSON.stringify(res.data));
+              setTimeout(function() {
+                owo.go('page1');
+                if (window.openid && window.openid != res.data.weixin) {
+                  if (window.confirm('是否用微信绑定当前账号?')) {
+                    saveOpenID(window.openid);
+                  }
+                }
+              }, 0);
+            } else {
+              toast(res.message);
+            }
+          });
+        },
+        "register": function register() {
+          if (!this.data.registerusername) {
+            toast('用户名不能为空哦!');
+            return;
+          }
+          if (!this.data.registerPassWord) {
+            toast('密码不能为空哦!');
+            return;
+          }
+          if (!this.data.registerPassWordR) {
+            toast('重复密码不能为空哦!');
+            return;
+          }
+          if (!this.data.registerPhone) {
+            toast('手机号码不能为空!');
+            return;
+          }
+          if (this.data.registerPassWord !== this.data.registerPassWordR) {
+            toast('两次输入的密码不一致哦!');
+            return;
+          }
+          fetch("//going.run/userServer?route=register", {
+            method: 'POST',
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              phone: this.data.registerPhone,
+              username: this.data.registerusername,
+              password: this.data.registerPassWord,
+              code: this.data.registerCode
+            })
+          }).then(function(response) {
+            return response.json();
+          }).then(function(res) {
+            if (res.err === 0) {
+              toast('注册成功!');
+              owo.go('/view-loginContent=login');
+            } else {
+              toast("\u6CE8\u518C\u5931\u8D25: " + res.message);
+            }
+          });
+        },
+        "sendSMS": function sendSMS() {
+          if (!this.data.registerPhone) {
+            alert('手机号码不能为空!');
+            return;
+          }
+          if (Date.parse(new Date()) - this.data.smsTime < 60000) {
+            alert('发送短信需间隔一分钟!');
+            return;
+          }
+          this.data.smsTime = Date.parse(new Date());
+          fetch("//going.run/userServer?route=sendSMS", {
+            method: 'POST',
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              phone: this.data.registerPhone
+            })
+          }).then(function(response) {
+            return response.json();
+          }).then(function(res) {
+            if (res.err === 0) {
+              toast('短信已发送!');
+            } else {
+              toast("\u77ED\u4FE1\u53D1\u9001\u5931\u8D25: " + res.message);
+            }
+          });
+        },
+        "view": {
+          "loginContent": [{
+            "_name": "login",
+            "_inherit": true
+          }, {
+            "_name": "register",
+            "_inherit": true
+          }]
+        }
+      },
+      "page1": {
+        "data": {
+          "userInfo": {}
+        },
+        "show": function show() {
+          var _this = this;
+          // if (!owo.state.userInfo) {
+          //   setTimeout(() => {
+          //     owo.go('login')
+          //   }, 0);
+          //   return
+          // }
+          // 获取用户数据
+          var requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+          };
+          fetch("https://service-8wm1j70q-1256763111.gz.apigw.tencentcs.com/release/dbGet?name=yangzhu_puge", requestOptions).then(function(response) {
+            return response.json();
+          }).then(function(result) {
+            console.log(result.data);
+            _this.data.userInfo = result.data;
+            if (result.data.anm.anm1) {
+              _this.query('.yang').style.display = 'block';
+              if (result.data.anm.anm1 + 86400 < parseInt(Date.parse(new Date()) / 1000)) {
+                _this.query('.yang .sh-time').innerText = '可收获';
+                window.ksh = true;
+              } else {
+                _this.query('.yang .sh-time').innerText = moment(result.data.anm.anm1 * 1000).add(24, 'hour').fromNow() + '可收获';
               }
             }
-          }, 0);
-        } else {
-          toast(res.message);
-        }
-      });
-    },
-    "register": function register() {
-      if (!this.data.registerusername) {
-        toast('用户名不能为空哦!');
-        return;
-      }
-      if (!this.data.registerPassWord) {
-        toast('密码不能为空哦!');
-        return;
-      }
-      if (!this.data.registerPassWordR) {
-        toast('重复密码不能为空哦!');
-        return;
-      }
-      if (!this.data.registerPhone) {
-        toast('手机号码不能为空!');
-        return;
-      }
-      if (this.data.registerPassWord !== this.data.registerPassWordR) {
-        toast('两次输入的密码不一致哦!');
-        return;
-      }
-      fetch("//going.run/userServer?route=register", {
-        method: 'POST',
-        headers: {
-          "Content-Type": "application/json"
+          })["catch"](function(error) {
+            return console.log('error', error);
+          });
         },
-        body: JSON.stringify({
-          phone: this.data.registerPhone,
-          username: this.data.registerusername,
-          password: this.data.registerPassWord,
-          code: this.data.registerCode
-        })
-      }).then(function (response) {
-        return response.json();
-      }).then(function (res) {
-        if (res.err === 0) {
-          toast('注册成功!');
-          owo.go('/view-loginContent=login');
-        } else {
-          toast("\u6CE8\u518C\u5931\u8D25: " + res.message);
-        }
-      });
-    },
-    "sendSMS": function sendSMS() {
-      if (!this.data.registerPhone) {
-        alert('手机号码不能为空!');
-        return;
-      }
-      if (Date.parse(new Date()) - this.data.smsTime < 60000) {
-        alert('发送短信需间隔一分钟!');
-        return;
-      }
-      this.data.smsTime = Date.parse(new Date());
-      fetch("//going.run/userServer?route=sendSMS", {
-        method: 'POST',
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          phone: this.data.registerPhone
-        })
-      }).then(function (response) {
-        return response.json();
-      }).then(function (res) {
-        if (res.err === 0) {
-          toast('短信已发送!');
-        } else {
-          toast("\u77ED\u4FE1\u53D1\u9001\u5931\u8D25: " + res.message);
-        }
-      });
-    },
-    "view": {
-      "loginContent": [{
-        "_name": "login",
-        "_inherit": true
-      }, {
-        "_name": "register",
-        "_inherit": true
-      }]
-    }
-  },
-  "page1": {
-    "data": {
-      "userInfo": {}
-    },
-    "show": function show() {
-      var _this = this;
-      // if (!owo.state.userInfo) {
-      //   setTimeout(() => {
-      //     owo.go('login')
-      //   }, 0);
-      //   return
-      // }
-      // 获取用户数据
-      var requestOptions = {
-        method: 'GET',
-        redirect: 'follow'
-      };
-      fetch("https://service-8wm1j70q-1256763111.gz.apigw.tencentcs.com/release/dbGet?name=yangzhu_puge", requestOptions).then(function (response) {
-        return response.json();
-      }).then(function (result) {
-        console.log(result.data);
-        _this.data.userInfo = result.data;
-        if (result.data.anm.anm1) {
-          _this.query('.yang').style.display = 'block';
-          if (result.data.anm.anm1 + 86400 < parseInt(Date.parse(new Date()) / 1000)) {
-            _this.query('.yang .sh-time').innerText = '可收获';
-          } else {
-            _this.query('.yang .sh-time').innerText = moment(result.data.anm.anm1 * 1000).add(24, 'hour').fromNow() + '可收获';
+        "shouhuo": function shouhuo() {
+          var _this2 = this;
+          if (!window.ksh) {
+            alert('当前没有可收获动物!');
+            return;
           }
+          var myHeaders = new Headers();
+          myHeaders.append("Content-Type", "application/json");
+          var raw = JSON.stringify({
+            "anm1": parseInt(Date.parse(new Date()) / 1000)
+          });
+          var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+          };
+          fetch("https://service-8wm1j70q-1256763111.gz.apigw.tencentcs.com/release/dbAdd?name=yangzhu_puge&key=anm", requestOptions).then(function(response) {
+            return response.text();
+          }).then(function(result) {
+            alert('收获成功!');
+            _this2.show();
+          })["catch"](function(error) {
+            return console.log('error', error);
+          });
         }
-      })["catch"](function (error) {
-        return console.log('error', error);
-      });
-    },
-    "shouhuo": function shouhuo() {
-      alert('当前没有可收获动物!');
-      return;
-      var myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
-      var raw = JSON.stringify({
-        "anm1": parseInt(Date.parse(new Date()) / 1000)
-      });
-      var requestOptions = {
-        method: 'POST',
-        headers: myHeaders,
-        body: raw,
-        redirect: 'follow'
-      };
-      fetch("https://service-8wm1j70q-1256763111.gz.apigw.tencentcs.com/release/dbAdd?name=yangzhu_puge&key=anm", requestOptions).then(function (response) {
-        return response.text();
-      }).then(function (result) {
-        return console.log(result);
-      })["catch"](function (error) {
-        return console.log('error', error);
-      });
-    }
-  },
-  "page2": {
-    "choujiang": function choujiang() {
-      this.query('.choujiang-box').style.display = 'block';
-      owo.animate('bounceIn', this.query('.choujiang  '));
-    }
-  }
-};
-</script>
+      },
+      "page2": {
+        "choujiang": function choujiang() {
+          this.query('.choujiang-box').style.display = 'block';
+          owo.animate('bounceIn', this.query('.choujiang  '));
+        }
+      }
+    };
+  </script>
 
-    <script src="https://cunchu.site/owo/plug/autoScale.js" type="text/javascript"  charset="UTF-8"></script>
-    <script src="https://demos.run/debuger/static/js/toast.js" type="text/javascript"  charset="UTF-8"></script>
-    <script src="https://cunchu.site/owo/script/moment.js" type="text/javascript"  charset="UTF-8"></script>
-    <script src="./static/js/main.js" type="text/javascript"  charset="UTF-8"></script>
+  <script src="https://cunchu.site/owo/plug/autoScale.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="https://demos.run/debuger/static/js/toast.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="https://cunchu.site/owo/script/moment.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="./static/js/main.js" type="text/javascript" charset="UTF-8"></script>
 
-  </body>
+</body>
+
 </html>
