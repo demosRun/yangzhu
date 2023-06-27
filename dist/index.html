@@ -76,10 +76,10 @@
       <div class="so so-0"></div>
       <div class="so so-1">
         <div class="so so-2">
-          <div class="numb">15424</div>
+          <div class="numb numb1">11424</div>
         </div>
         <div class="so so-3">
-          <div class="numb">11424</div>
+          <div class="numb numb2">0</div>
         </div>
         <div class="so so-4">
           <div class="so so-5 owo-a-scale" onclick="alert('暂未开放!')"></div>
@@ -318,6 +318,9 @@
                 _this.query('.yang .sh-time').innerText = moment(result.data.anm.anm1 * 1000).add(24, 'hour').fromNow() + '可收获';
               }
             }
+            if (result.data.anm.numb2) {
+              _this.query('.numb2').innerText = result.data.anm.numb2;
+            }
           })["catch"](function(error) {
             return console.log('error', error);
           });
@@ -331,7 +334,8 @@
           var myHeaders = new Headers();
           myHeaders.append("Content-Type", "application/json");
           var raw = JSON.stringify({
-            "anm1": parseInt(Date.parse(new Date()) / 1000)
+            "anm1": parseInt(Date.parse(new Date()) / 1000),
+            "numb2": window.numb2 + 100
           });
           var requestOptions = {
             method: 'POST',

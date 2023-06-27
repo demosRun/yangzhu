@@ -3,9 +3,9 @@
   .so.so-0
   .so.so-1
     .so.so-2
-      .numb 15424
+      .numb.numb1 11424
     .so.so-3
-      .numb 11424
+      .numb.numb2 0
     .so.so-4
       .so.so-5.owo-a-scale(onclick="alert('暂未开放!')")
       .so.so-6
@@ -60,6 +60,10 @@
             }
             
           }
+          if (result.data.anm.numb2) {
+            this.query('.numb2').innerText = result.data.anm.numb2
+            
+          }
         })
         .catch(error => console.log('error', error));
     },
@@ -73,7 +77,8 @@
       myHeaders.append("Content-Type", "application/json");
 
       var raw = JSON.stringify({
-        "anm1": parseInt(Date.parse(new Date()) / 1000)
+        "anm1": parseInt(Date.parse(new Date()) / 1000),
+        "numb2": window.numb2 + 100
       });
 
       var requestOptions = {
